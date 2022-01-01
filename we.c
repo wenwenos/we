@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <ncurses.h>
 
-int main(){
+int main(int ac, char *av[]) { initscr();
+                              
+  move(LINES-2, 0);
+  attron(A_REVERSE); printw(" Editing %s    WE ver0.01 ", av[1]); attroff(A_REVERSE);
+  refresh();
   
-  printf("we is a console text editor.\n");
-  
-  return 0;
+  getchar(); endwin(); return 0;
   
 }
